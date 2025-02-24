@@ -4,7 +4,6 @@ import * as React from "react"
 import Link from "next/link"
 
 import { cn } from "@/lib/utils"
-// import { Icons } from "@/components/icons"
 import {
     NavigationMenu,
     NavigationMenuContent,
@@ -14,7 +13,9 @@ import {
     NavigationMenuTrigger,
     navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu"
-import LoginForm from "../form/login.form"
+import { Coins } from "lucide-react"
+import Image from "next/image"
+
 
 const components: { title: string; href: string; description: string }[] = [
     {
@@ -56,8 +57,8 @@ const components: { title: string; href: string; description: string }[] = [
 
 export default function Navigation() {
     return (
-        <div className="sticky top-0 z-10  backdrop-blur-md px-20 py-6 flex justify-between items-center">
-            <h1>Logo</h1>
+        <div className="flex items-center gap-6">
+            <Image src='/airc-store-logo.png' alt="airc-logo" width={40} height={40} />
 
             <NavigationMenu className="w-full end">
                 <NavigationMenuList>
@@ -75,8 +76,7 @@ export default function Navigation() {
                                                 AIRC Tools List
                                             </div>
                                             <p className="text-sm leading-tight text-muted-foreground">
-                                                Beautifully designed components built with Radix UI and
-                                                Tailwind CSS.
+                                                All the latest tool developed by the AIRC team.
                                             </p>
                                         </a>
                                     </NavigationMenuLink>
@@ -163,15 +163,6 @@ export default function Navigation() {
                     </NavigationMenuItem>
                 </NavigationMenuList>
             </NavigationMenu>
-
-
-            
-            
-            <div className="flex items-center gap-2">
-               <Link href="/login" >Login Now</Link>
-            </div>
-
-
         </div>
     )
 }

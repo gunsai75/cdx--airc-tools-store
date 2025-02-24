@@ -4,9 +4,10 @@ import MostPopularTools from "@/components/tools/most-popular-tools";
 import SearchTool from "@/components/tools/search-tool";
 import ToolsCard from "@/components/tools/tools-card";
 import ToolsStats from "@/components/tools/tools-stats";
-import Image from "next/image";
 
-export default function Home() {
+export default async function Home() {
+
+
   return (
     <div className="w-full">
       <main className="w-full flex flex-col gap-8 row-start-2 items-center sm:items-start">
@@ -14,6 +15,7 @@ export default function Home() {
         <h3 className="mt-10 w-full text-4xl text-center font-bold tracking-tighter md:text-5xl lg:text-6xl">
           Tools to make your life <AuroraText className="w-[300px]">
             <WordRotate
+        
               words={["Easy", "Fun", "Awesome", "Amazing", "Great", "Good", "Cool", "Awesome", "Amazing", "Great", "Good", "Cool"]}
             />
           </AuroraText>
@@ -23,10 +25,6 @@ export default function Home() {
         <ToolsCard  />  
         <ToolsStats />
         <MostPopularTools />
-
-        {/* Footer */}
-
-
       </main>
 
 

@@ -18,8 +18,8 @@ export default function ToolsCard() {
     return (
         <div className="w-full flex justify-center">
             <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                {toolsCategory.map((tool) => (
-                    <li className="w-[300px] relative border border-border rounded-md p-4 flex flex-col gap-2">
+                {toolsCategory.map((tool, index) => (
+                    <li key={index} className="w-[300px] relative border border-border rounded-md p-4 flex flex-col gap-2">
                         <section className="flex items-center gap-2 justify-between">
                             <h3 className="font-medium">{tool.category}</h3>
                         </section>
