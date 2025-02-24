@@ -14,6 +14,7 @@ import {
     NavigationMenuTrigger,
     navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu"
+import LoginForm from "../form/login.form"
 
 const components: { title: string; href: string; description: string }[] = [
     {
@@ -164,9 +165,13 @@ export default function Navigation() {
             </NavigationMenu>
 
 
+            
+            
             <div className="flex items-center gap-2">
-                <button className="w-10 h-10 bg-black rounded-full text-white">S</button>
+               <Link href="/login" >Login Now</Link>
             </div>
+
+
         </div>
     )
 }
