@@ -11,7 +11,7 @@ export default function LogoutButton() {
                 await signOut({redirectTo: '/login'})
             }}
         >
-            <Button type="submit" variant={'ghost'} className=""><LogOut className="w-12 h-12 text-red-600 rounded-full" /></Button>
+            <Button type="submit" variant={'destructive'} >Logout <LogOut className="w-12 h-12" /></Button>
         </form>
     )
 }

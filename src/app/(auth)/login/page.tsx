@@ -53,10 +53,15 @@ export default function Login() {
     return (
         <div className="w-full lg:max-w-lg p-2 mx-auto flex flex-col justify-center items-center h-screen">
             
-            <h3 className="text-2xl">Login to AIRC Store </h3>
+            {/* <section className="w-full flex flex-col gap-2 items-center"> 
+                <h3 className="text-5xl font-semibold">Login to AIRC Store </h3>
+                <p className="text-slate-600 text-sm">Sign in to your account to access your tools and resources.</p>
+            </section> */}
+
+
             <Form {...form}>
                 <form  className="space-y-2">
-                    <Button disabled={isPending} onClick={() => handleSocialLogin('google')} type="button" variant={'outline'} className="mt-3 p-5 w-full border-2"> 
+                    <Button disabled={isPending} onClick={() => handleSocialLogin('google')} type="button" variant={'outline'} className="mt-3 p-6 w-full border-2"> 
                         Login with Google <Image src={'/google.png'} alt="google" width={20} height={20} />
                     
                     </Button>

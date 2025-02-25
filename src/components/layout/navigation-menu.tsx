@@ -17,43 +17,52 @@ import { Coins } from "lucide-react"
 import Image from "next/image"
 
 
-const components: { title: string; href: string; description: string }[] = [
+// Blockchain
+const blockchainLinks: { title: string; href: string; description: string }[] = [
     {
         title: "Stock Exchange",
-        href: "/docs/primitives/alert-dialog",
-        description:
-            "A modal dialog that interrupts the user with important content and expects a response.",
+        href: "/tools/blockchain/stock",
+        description: "Stock Exchange is a platform that allows users to buy and sell stocks.",
     },
     {
         title: "Certificate Generator",
-        href: "/docs/primitives/hover-card",
+        href: "/tools/blockchain/certificate",
         description:
-            "For sighted users to preview content available behind a link.",
+            "Certificate Generator is a platform that allows users to generate certificates.",
     },
+]
+
+// Metaverse
+const metaverseLinks: { title: string; href: string; description: string }[] = [
     {
         title: "Campus Tour",
-        href: "/docs/primitives/progress",
+        href: "/tools/arvr/campustour",
         description:
-            "Displays an indicator showing the completion progress of a task, typically displayed as a progress bar.",
+            "Campus Tour is a platform that allows users to explore the campus.",
     },
     {
         title: "AR/VR Classroom",
-        href: "/docs/primitives/scroll-area",
-        description: "Visually or semantically separates content.",
+        href: "/tools/arvr/arclassroom",
+        description: "AR/VR Classroom is a platform that allows users to attend classes.",
+    }
+]
+
+// Artificial Intelligence
+const aiLinks: { title: string; href: string; description: string }[] = [
+    {
+        title: "AI Stock Chatbot",
+        href: "/tools/ai/chatbot", 
+        description:
+            "AI Stock Chatbot is a platform that allows users to chat with a chatbot.",
     },
     {
-        title: "Tax Calculator",
-        href: "/docs/primitives/tabs",
+        title: "Eunio",
+        href: "/tools/ai/eunio",
         description:
-            "A set of layered sections of content—known as tab panels—that are displayed one at a time.",
-    },
-    {
-        title: "Student Loan",
-        href: "/docs/primitives/tooltip",
-        description:
-            "A popup that displays information related to an element when the element receives keyboard focus or the mouse hovers over it.",
+            "Eunio is a first AI student.",
     },
 ]
+
 
 export default function Navigation() {
     return (
@@ -67,8 +76,8 @@ export default function Navigation() {
                         <NavigationMenuContent>
                             <ul className="grid gap-3 p-4 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
                                 <li className="row-span-3">
-                                    <NavigationMenuLink asChild>
-                                        <a
+                                    {/* <NavigationMenuLink asChild> */}
+                                        <Link 
                                             className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-muted/50 to-muted p-6 no-underline outline-none focus:shadow-md"
                                             href="/"
                                         >
@@ -78,31 +87,34 @@ export default function Navigation() {
                                             <p className="text-sm leading-tight text-muted-foreground">
                                                 All the latest tool developed by the AIRC team.
                                             </p>
-                                        </a>
-                                    </NavigationMenuLink>
+                                        </Link>
+
+                        
+
+                                    {/* </NavigationMenuLink> */}
                                 </li>
 
                                 {/* ALL Tools List */}
-                                <ListItem href="/docs" title="Tax Calculator">
-                                    Re-usable components built using Radix UI and Tailwind CSS.
+                                <ListItem href="/tools" title="Tax Calculator">
+                                    Calculate tax for your business.
                                 </ListItem>
-                                <ListItem href="/docs/installation" title="Campus Tour">
-                                    How to install dependencies and structure your app.
+                                <ListItem href="/tools" title="Campus Tour">
+                                    Campus Tour is a platform that allows users to explore the campus.
                                 </ListItem>
-                                <ListItem href="/docs/primitives/typography" title="Stock Exchange">
-                                    Styles for headings, paragraphs, lists...etc
+                                <ListItem href="/tools" title="Stock Exchange">
+                                    Stock Exchange is a platform that allows users to buy and sell stocks.
                                 </ListItem>
 
 
                             </ul>
                         </NavigationMenuContent>
                     </NavigationMenuItem>
-                    {/* BLOCKCHAIN */}
+    
                     <NavigationMenuItem>
                         <NavigationMenuTrigger>Blockchain</NavigationMenuTrigger>
                         <NavigationMenuContent>
                             <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
-                                {components.map((component) => (
+                                {blockchainLinks.map((component) => (
                                     <ListItem
                                         key={component.title}
                                         title={component.title}
@@ -120,7 +132,7 @@ export default function Navigation() {
                         <NavigationMenuTrigger>Metaverse</NavigationMenuTrigger>
                         <NavigationMenuContent>
                             <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
-                                {components.map((component) => (
+                                {metaverseLinks.map((component) => (
                                     <ListItem
                                         key={component.title}
                                         title={component.title}
@@ -138,7 +150,7 @@ export default function Navigation() {
                         <NavigationMenuTrigger>Artificial Intelligence</NavigationMenuTrigger>
                         <NavigationMenuContent>
                             <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
-                                {components.map((component) => (
+                                {aiLinks.map((component) => (
                                     <ListItem
                                         key={component.title}
                                         title={component.title}
@@ -167,28 +179,23 @@ export default function Navigation() {
     )
 }
 
-const ListItem = React.forwardRef<
-    React.ElementRef<"a">,
-    React.ComponentPropsWithoutRef<"a">
->(({ className, title, children, ...props }, ref) => {
+const ListItem =({href, title, children, className, key}: {href: string, title: string, children: React.ReactNode, className?: string, key?: string}) => {
     return (
-        <li>
-            <NavigationMenuLink asChild>
-                <a
-                    ref={ref}
+        <li key={key || title} >
+            {/* <NavigationMenuLink asChild> */}
+                <Link
+                    href={href} 
                     className={cn(
                         "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground",
                         className
                     )}
-                    {...props}
                 >
                     <div className="text-sm font-medium leading-none">{title}</div>
                     <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
                         {children}
                     </p>
-                </a>
-            </NavigationMenuLink>
+                </Link>
+            {/* </NavigationMenuLink> */}
         </li>
     )
-})
-ListItem.displayName = "ListItem"
+}
