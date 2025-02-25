@@ -6,6 +6,8 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Avatar, AvatarFallback, AvatarImage } from "@radix-ui/react-avatar";
 import { Coins } from "lucide-react";
 import Image from "next/image";
+import getTokensByEmail from "../../../../data/user";
+import { RainbowButton } from "@/components/magicui/rainbow-button";
 
 export default async function Settings() {
   const session = await auth();
@@ -18,6 +20,9 @@ export default async function Settings() {
       },
     }
   }
+
+  let token = await getTokensByEmail(session?.user?.email as string) || 0;
+
 
 
   return (
@@ -55,7 +60,7 @@ export default async function Settings() {
         <TabsContent value="pricing" className="col-span-3">
         <section className="mb-10">
             <h3 className="text-2xl font-bold">Pricing</h3>
-            <p className="text-sm text-gray-500">You have 100 credits left</p>
+            <p className="text-sm text-gray-500">You have {token} credits left</p>
           </section>
 
           <ul className="flex flex-col gap-2 w-full">
@@ -63,27 +68,28 @@ export default async function Settings() {
             <li className="w-full flex  justify-between items-center">
               <p className="text-sm font-medium">Rs. 100</p>
               <p className="flex text-sm justify-center items-center gap-2 font-medium">500 <Coins className="w-5 h-5" color="gold" /></p>
-              <Button variant={'outline'} className="rounded-full">Buy</Button>
+              <Button variant={'ghost'} className="rounded-full">Buy</Button>
             </li>
             <li className="w-full flex  justify-between items-center">
               <p className="text-sm font-medium">Rs. 200</p>
               <p className="flex text-sm justify-center items-center gap-2 font-medium">1100 <Coins className="w-5 h-5" color="gold" /></p>
-              <Button variant={'outline'} className="rounded-full">Buy</Button>
+              <Button variant={'ghost'} className="rounded-full">Buy</Button>
             </li>
             <li className="w-full flex  justify-between items-center">
               <p className="text-sm font-medium">Rs. 300</p>
               <p className="flex text-sm justify-center items-center gap-2 font-medium">2200 <Coins className="w-5 h-5" color="gold" /> </p>
-              <Button variant={'outline'} className="rounded-full bg-purple-100 hover:bg-purple-200">Buy</Button>
+              {/* <Button variant={'ghost'} className="rounded-full bg-purple-100 hover:bg-purple-200">Buy</Button> */}
+              <RainbowButton className="px-4 py-1 rounded-full">Buy</RainbowButton>
             </li>
             <li className="w-full flex  justify-between items-center">
               <p className="text-sm font-medium">Rs. 400</p>
               <p className="flex text-sm justify-center items-center gap-2 font-medium">3200 <Coins className="w-5 h-5" color="gold" /></p>
-              <Button variant={'outline'} className="rounded-full">Buy</Button>
+              <Button variant={'ghost'} className="rounded-full">Buy</Button>
             </li>
             <li className="w-full flex  justify-between items-center">
               <p className="text-sm font-medium">Rs. 500</p>
               <p className="flex text-sm justify-center items-center gap-2 font-medium">4200 <Coins className="w-5 h-5" color="gold" /></p>
-              <Button variant={'outline'} className="rounded-full">Buy</Button>
+              <Button variant={'ghost'} className="rounded-full">Buy</Button>
             </li>
 
 

@@ -7,7 +7,6 @@ export function cn(...inputs: ClassValue[]) {
 
 
 export const getColorClass = (colorName: string, shade: string) => {
-  // This approach ensures Tailwind can see all possible class combinations at build time
   const colorClasses: Record<string, Record<string, string>> = {
     red: { "50": "bg-red-50", "100": "bg-red-100", "700": "text-red-700" },
     orange: { "50": "bg-orange-50", "100": "bg-orange-100", "700": "text-orange-700", },
@@ -33,9 +32,8 @@ export const getColorClass = (colorName: string, shade: string) => {
     stone: { "50": "bg-stone-50", "100": "bg-stone-100", "700": "text-stone-700", },
   }
 
-  // Get the base color name (without the shade)
-  const baseColor = colorName || colorName
+  const baseColor = colorName
 
-  // Return the appropriate class or a fallback
+
   return colorClasses[baseColor]?.[shade] || ""
 }

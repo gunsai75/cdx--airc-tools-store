@@ -29,13 +29,12 @@ export default function ToolsList({ toolCategory, toolsCount, tools }: { toolCat
 
 
 const ToolCard = ({ tool }: { tool: any }) => {
-    let { id, name, category, totalTools, description, icon, color, tokenAmount, url } = tool;
+    let { id, name, description, color, tokenAmount, url } = tool;
 
 
     const bgColor50 = getColorClass(color, "50")
     const bgColor100 = getColorClass(color, "100")
     const textColor700 = getColorClass(color, "700")
-   
 
 
     return (

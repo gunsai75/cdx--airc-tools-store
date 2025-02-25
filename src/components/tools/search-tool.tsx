@@ -5,11 +5,6 @@ import { tools } from "../../../data/tools";
 
 export default function SearchTool() {
     const [search, setSearch] = useState('');
-
-    console.log('SEARCH', search);
-
-    console.log(tools)
-
     const filteredTools = tools.filter(tool => tool.name.toLowerCase().includes(search.toLowerCase()));
 
     return (
