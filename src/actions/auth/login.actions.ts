@@ -7,6 +7,9 @@ export async function login() {
         await signIn("google")
         return { success: "Login Successful" }
     }catch(e){  
-        return { error: 'Login Failed' }
+        if (e instanceof Error) {
+            return { error: 'Login Failed', message: e.message }
+        }
+        return { error: 'Login Failed', message: 'Unknown error' }
     }
 }

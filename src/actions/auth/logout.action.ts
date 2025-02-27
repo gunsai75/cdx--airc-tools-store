@@ -10,6 +10,6 @@ export async function logout() {
         await signOut()
         return { success: "Logout Successful" }
     }catch(e){  
-        return { error: 'Logout Failed' }
+        return { error: 'Logout Failed', message: (e as Error).message }
     }
 }

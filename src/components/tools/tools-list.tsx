@@ -1,8 +1,9 @@
+import { ITools } from "@/lib/types";
 import { cn, getColorClass } from "@/lib/utils";
 import { ArrowUpRight, Coins, PillBottle } from "lucide-react";
 import Link from "next/link";
 
-export default function ToolsList({ toolCategory, toolsCount, tools }: { toolCategory: string, toolsCount: number, tools: any[] }) {
+export default function ToolsList({ toolCategory, toolsCount, tools }: { toolCategory: string, toolsCount: number, tools: ITools[] }) {
     return (
         <div className="w-full">
             <main className="w-full flex flex-col gap-8 row-start-2 items-center sm:items-start">
@@ -28,12 +29,12 @@ export default function ToolsList({ toolCategory, toolsCount, tools }: { toolCat
 
 
 
-const ToolCard = ({ tool }: { tool: any }) => {
-    let { id, name, description, color, tokenAmount, url } = tool;
+const ToolCard = ({ tool }: { tool: ITools }) => {
+    const { id, name, description, color, tokenAmount, url } = tool;
 
 
     const bgColor50 = getColorClass(color, "50")
-    const bgColor100 = getColorClass(color, "100")
+    // const bgColor100 = getColorClass(color, "100")
     const textColor700 = getColorClass(color, "700")
 
 

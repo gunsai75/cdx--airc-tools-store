@@ -1,9 +1,7 @@
 import { auth } from "@/auth";
 import LogoutButton from "@/components/buttons/logout.button";
-import ToolsList from "@/components/tools/tools-list";
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Avatar, AvatarFallback, AvatarImage } from "@radix-ui/react-avatar";
 import { Coins } from "lucide-react";
 import Image from "next/image";
 import getTokensByEmail from "../../../../data/user";
@@ -21,7 +19,7 @@ export default async function Settings() {
     }
   }
 
-  let token = await getTokensByEmail(session?.user?.email as string) || 0;
+  const token = await getTokensByEmail(session?.user?.email as string) || 0;
 
 
 

@@ -1,7 +1,6 @@
 import { Inter } from 'next/font/google'
 import type { Metadata } from "next";
 import "./globals.css";
-import Navigation from '@/components/layout/navigation-menu';
 import { auth } from '@/auth';
 import getTokensByEmail from '../../data/user';
 import HeaderNavigationMenu from '@/components/layout/header-navigation-menu';

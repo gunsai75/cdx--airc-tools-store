@@ -1,6 +1,6 @@
 "use client"
 
-import { ChevronRight, type LucideIcon } from "lucide-react"
+import { type LucideIcon } from "lucide-react"
 
 import {
   Collapsible,
@@ -20,7 +20,6 @@ import {
 } from "@/components/ui/sidebar"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
-import { useState } from "react"
 
 export function NavMain({
   items,
@@ -41,7 +40,6 @@ export function NavMain({
 
 
   const pathname = usePathname();
-  const [open, setOpen] = useState<boolean>(false)
 
 
   return (

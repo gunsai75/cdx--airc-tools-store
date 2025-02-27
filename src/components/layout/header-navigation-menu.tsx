@@ -5,6 +5,8 @@ import Link from 'next/link';
 import getTokensByEmail from '../../../data/user';
 import Image from 'next/image';
 import { UserAvatar } from '../avatar/user-avatar';
+import { Session } from '@auth/core/types';
+
 export default async function HeaderNavigationMenu() {
     const session = await auth();
 
@@ -20,8 +22,8 @@ export default async function HeaderNavigationMenu() {
 }
 
 
-const LoginAndTokenDisplay = async ({ session }: { session: any }) => {
-    let token = await getTokensByEmail(session?.user?.email as string) || 0;
+const LoginAndTokenDisplay = async ({ session }: { session: Session }) => {
+    const token = await getTokensByEmail(session?.user?.email as string) || 0;
 
 
     return (
@@ -29,7 +31,7 @@ const LoginAndTokenDisplay = async ({ session }: { session: any }) => {
             <p className="flex justify-between items-center gap-2 border-2 px-3 py-2 rounded-full bg-purple-700 text-white text-sm"><span className="flex">{token} <Coins width={20} height={20} color="gold" className="ml-1" /></span> tokens left</p>
 
             <Link href="/settings" className="flex items-center gap-2">
-                <UserAvatar imageUrl={session.user.image} name={session.user.name} />
+                <UserAvatar imageUrl={session?.user?.image ?? ''} name={session?.user?.name ?? 'User'} />
             </Link>
 
         </div>

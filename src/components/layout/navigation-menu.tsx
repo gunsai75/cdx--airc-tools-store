@@ -13,7 +13,6 @@ import {
     NavigationMenuTrigger,
     navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu"
-import { Coins } from "lucide-react"
 import Image from "next/image"
 
 

@@ -1,4 +1,7 @@
-export const tools = [
+import { ITools } from "@/lib/types";
+
+
+export const tools : ITools[] =  [
     // Blockchain Category (20 tools) - Green and related shades
     { id: 1, category: 'Blockchain', totalTools: 20, description: 'Decentralized ledger technologies.', icon: 'PillBottle', color: 'red', tokenAmount: 150, url: '/tools/blockchain/chainlink', name: 'Chainlink Oracle Network' },
     { id: 2, category: 'Blockchain', totalTools: 20, description: 'Smart contract platform.', icon: 'PillBottle', color: 'orange', tokenAmount: 200, url: '/tools/blockchain/ethereum', name: 'Ethereum Smart Contracts' },

@@ -31,8 +31,9 @@ import {
 } from "@/components/ui/tabs"
 import ToolsList from "./tools-list";
 import { useState } from "react";
+import { ITools } from "@/lib/types";
 
-export function ToolsTab({ tools } : { tools : any[] }) {
+export function ToolsTab({ tools } : { tools : ITools[]}) {
 
 
     const aiTools = tools.filter(tool => tool.category === 'AI');
