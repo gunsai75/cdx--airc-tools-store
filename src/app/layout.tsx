@@ -4,6 +4,7 @@ import "./globals.css";
 import { auth } from '@/auth';
 import getTokensByEmail from '../../data/user';
 import HeaderNavigationMenu from '@/components/layout/header-navigation-menu';
+import ScrollRestoration from '@/components/restore-position';
 
 
  const inter = Inter({ subsets: ['latin'] })
@@ -36,6 +37,7 @@ export default async function RootLayout({
         className={inter.className}
       >
         <HeaderNavigationMenu/>
+        <ScrollRestoration/>
         {children}
       </body>
     </html>

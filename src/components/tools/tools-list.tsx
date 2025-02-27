@@ -2,6 +2,7 @@ import { ITools } from "@/lib/types";
 import { cn, colorMap } from "@/lib/utils";
 import { ArrowUpRight, Coins, PillBottle } from "lucide-react";
 import Link from "next/link";
+import { Button } from "../ui/button";
 
 export default function ToolsList({ toolCategory, toolsCount, tools }: { toolCategory: string, toolsCount: number, tools: ITools[] }) {
     return (
@@ -50,6 +51,8 @@ const ToolCard = ({ tool }: { tool: ITools }) => {
                 <p className={cn("flex items-center text-xs px-3 py-2 rounded-full", bg50, text700)}> <span className="font-semibold">{tokenAmount}</span>
                     <Coins width={15} height={15} className="mx-1" /> per use
                 </p>
+                
+                {/* Tool Detail */}
                 <Link
                     href={url}
                     className={cn(
@@ -60,6 +63,11 @@ const ToolCard = ({ tool }: { tool: ITools }) => {
                 >
                     <ArrowUpRight className="h-4 w-4 " />
                 </Link>
+
+                {/* <Button className={cn("text-xs")} variant={'ghost'}>Pay </Button> */}
+
+
+
             </section>
 
         </li>
