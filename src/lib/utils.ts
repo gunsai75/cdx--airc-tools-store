@@ -5,35 +5,27 @@ export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs))
 }
 
-
-export const getColorClass = (colorName: string, shade: string) => {
-  const colorClasses: Record<string, Record<string, string>> = {
-    red: { "50": "bg-red-50", "100": "bg-red-100", "700": "text-red-700" },
-    orange: { "50": "bg-orange-50", "100": "bg-orange-100", "700": "text-orange-700", },
-    amber: { "50": "bg-amber-50", "100": "bg-amber-100", "700": "text-amber-700", },
-    yellow: { "50": "bg-yellow-50", "100": "bg-yellow-100", "700": "text-yellow-700", },
-    lime: { "50": "bg-lime-50", "100": "bg-lime-100", "700": "text-lime-700", },
-    green: { "50": "bg-green-50", "100": "bg-green-100", "700": "text-green-700", },
-    emerald: { "50": "bg-emerald-50", "100": "bg-emerald-100", "700": "text-emerald-700", },
-    teal: { "50": "bg-teal-50", "100": "bg-teal-100", "700": "text-teal-700", },
-    cyan: { "50": "bg-cyan-50", "100": "bg-cyan-100", "700": "text-cyan-700", },
-    sky: { "50": "bg-sky-50", "100": "bg-sky-100", "700": "text-sky-700", },
-    blue: { "50": "bg-blue-50", "100": "bg-blue-100", "700": "text-blue-700", },
-    indigo: { "50": "bg-indigo-50", "100": "bg-indigo-100", "700": "text-indigo-700", },
-    violet: { "50": "bg-violet-50", "100": "bg-violet-100", "700": "text-violet-700", },
-    purple: { "50": "bg-purple-50", "100": "bg-purple-100", "700": "text-purple-700", },
-    fuchsia: { "50": "bg-fuchsia-50", "100": "bg-fuchsia-100", "700": "text-fuchsia-700", },
-    pink: { "50": "bg-pink-50", "100": "bg-pink-100", "700": "text-pink-700", },
-    rose: { "50": "bg-rose-50", "100": "bg-rose-100", "700": "text-rose-700", },
-    slate: { "50": "bg-slate-50", "100": "bg-slate-100", "700": "text-slate-700", },
-    gray: { "50": "bg-gray-50", "100": "bg-gray-100", "700": "text-gray-700", },
-    zinc: { "50": "bg-zinc-50", "100": "bg-zinc-100", "700": "text-zinc-700", },
-    neutral: { "50": "bg-neutral-50", "100": "bg-neutral-100", "700": "text-neutral-700", },
-    stone: { "50": "bg-stone-50", "100": "bg-stone-100", "700": "text-stone-700", },
-  }
-
-  const baseColor = colorName
-
-
-  return colorClasses[baseColor]?.[shade] || ""
-}
+    export const colorMap: Record<string, { bg50: string; hoverBg100: string; text700: string }> = {
+    slate: { bg50: "bg-slate-50", hoverBg100: "hover:bg-slate-100", text700: "text-slate-700" },
+    gray: { bg50: "bg-gray-50", hoverBg100: "hover:bg-gray-100", text700: "text-gray-700" },
+    zinc: { bg50: "bg-zinc-50", hoverBg100: "hover:bg-zinc-100", text700: "text-zinc-700" },
+    neutral: { bg50: "bg-neutral-50", hoverBg100: "hover:bg-neutral-100", text700: "text-neutral-700" },
+    stone: { bg50: "bg-stone-50", hoverBg100: "hover:bg-stone-100", text700: "text-stone-700" },
+    red: { bg50: "bg-red-50", hoverBg100: "hover:bg-red-100", text700: "text-red-700" },
+    orange: { bg50: "bg-orange-50", hoverBg100: "hover:bg-orange-100", text700: "text-orange-700" },
+    amber: { bg50: "bg-amber-50", hoverBg100: "hover:bg-amber-100", text700: "text-amber-700" },
+    yellow: { bg50: "bg-yellow-50", hoverBg100: "hover:bg-yellow-100", text700: "text-yellow-700" },
+    lime: { bg50: "bg-lime-50", hoverBg100: "hover:bg-lime-100", text700: "text-lime-700" },
+    green: { bg50: "bg-green-50", hoverBg100: "hover:bg-green-100", text700: "text-green-700" },
+    emerald: { bg50: "bg-emerald-50", hoverBg100: "hover:bg-emerald-100", text700: "text-emerald-700" },
+    teal: { bg50: "bg-teal-50", hoverBg100: "hover:bg-teal-100", text700: "text-teal-700" },
+    cyan: { bg50: "bg-cyan-50", hoverBg100: "hover:bg-cyan-100", text700: "text-cyan-700" },
+    sky: { bg50: "bg-sky-50", hoverBg100: "hover:bg-sky-100", text700: "text-sky-700" },
+    blue: { bg50: "bg-blue-50", hoverBg100: "hover:bg-blue-100", text700: "text-blue-700" },
+    indigo: { bg50: "bg-indigo-50", hoverBg100: "hover:bg-indigo-100", text700: "text-indigo-700" },
+    violet: { bg50: "bg-violet-50", hoverBg100: "hover:bg-violet-100", text700: "text-violet-700" },
+    purple: { bg50: "bg-purple-50", hoverBg100: "hover:bg-purple-100", text700: "text-purple-700" },
+    fuchsia: { bg50: "bg-fuchsia-50", hoverBg100: "hover:bg-fuchsia-100", text700: "text-fuchsia-700" },
+    pink: { bg50: "bg-pink-50", hoverBg100: "hover:bg-pink-100", text700: "text-pink-700" },
+    rose: { bg50: "bg-rose-50", hoverBg100: "hover:bg-rose-100", text700: "text-rose-700" },
+};

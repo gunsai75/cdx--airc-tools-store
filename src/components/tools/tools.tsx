@@ -3,7 +3,7 @@
 import { Input } from "../ui/input";
 import { tools } from "../../../data/tools";
 
-export default function SearchTool() {
+export default function Tools() {
     const [search, setSearch] = useState('');
     const filteredTools = tools.filter(tool => tool.name.toLowerCase().includes(search.toLowerCase()));
 
