@@ -5,6 +5,7 @@ import { auth } from '@/auth';
 import getTokensByEmail from '../../data/user';
 import HeaderNavigationMenu from '@/components/layout/header-navigation-menu';
 import ScrollRestoration from '@/components/restore-position';
+import { Toaster } from 'sonner';
 
 
  const inter = Inter({ subsets: ['latin'] })
@@ -36,6 +37,7 @@ export default async function RootLayout({
       <body
         className={inter.className}
       >
+          <Toaster /> 
         <HeaderNavigationMenu/>
         <ScrollRestoration/>
         {children}

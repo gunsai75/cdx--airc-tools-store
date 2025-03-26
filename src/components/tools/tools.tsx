@@ -31,7 +31,7 @@ import {
 } from "@/components/ui/tabs"
 import ToolsList from "./tools-list";
 import { useState } from "react";
-import { ITools } from "@/lib/types";
+import { ITools } from "@/lib/types/types";
 
 export function ToolsTab({ tools } : { tools : ITools[]}) {
 

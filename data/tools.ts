@@ -1,4 +1,4 @@
-import { ITools } from "@/lib/types";
+import { ITools } from "@/lib/types/types";
 
 
 export const tools : ITools[] =  [

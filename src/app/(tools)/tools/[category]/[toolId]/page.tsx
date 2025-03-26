@@ -1,3 +1,5 @@
+import pay from "@/actions/payment/pay.action";
+import PaymentButton from "@/components/buttons/pay.button";
 import { RainbowButton } from "@/components/magicui/rainbow-button";
 import { Button } from "@/components/ui/button";
 import { ArrowLeft} from "lucide-react";
@@ -16,11 +18,9 @@ export default async function ToolDetails({params}: {params: Promise<{ category:
                 </Link>
                
                <h1 className="text-center text-2xl"><span className="font-semibold">{toolId?.charAt(0).toUpperCase() + toolId?.slice(1)}</span> </h1>
+               
+                <PaymentButton/>
 
-
-                {/* pay now  */}
-                <RainbowButton className="text-xs rounded-full">Pay Now</RainbowButton>
-            
             </section>
 
 

@@ -1,11 +1,13 @@
 import { clsx, type ClassValue } from "clsx"
 import { twMerge } from "tailwind-merge"
 
+// tailwin merge
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs))
 }
 
-    export const colorMap: Record<string, { bg50: string; hoverBg100: string; text700: string }> = {
+// color map
+export const colorMap: Record<string, { bg50: string; hoverBg100: string; text700: string }> = {
     slate: { bg50: "bg-slate-50", hoverBg100: "hover:bg-slate-100", text700: "text-slate-700" },
     gray: { bg50: "bg-gray-50", hoverBg100: "hover:bg-gray-100", text700: "text-gray-700" },
     zinc: { bg50: "bg-zinc-50", hoverBg100: "hover:bg-zinc-100", text700: "text-zinc-700" },
@@ -29,3 +31,13 @@ export function cn(...inputs: ClassValue[]) {
     pink: { bg50: "bg-pink-50", hoverBg100: "hover:bg-pink-100", text700: "text-pink-700" },
     rose: { bg50: "bg-rose-50", hoverBg100: "hover:bg-rose-100", text700: "text-rose-700" },
 };
+
+// convert rupees to tokens
+export const  convertAmountToTokens = (amount : number) => {
+  console.log('Amount here')
+  
+  return amount * 100;
+}
+
+
+

@@ -1,4 +1,4 @@
-import { ITools } from "@/lib/types";
+import { ITools } from "@/lib/types/types";
 import { cn, colorMap } from "@/lib/utils";
 import { ArrowUpRight, Coins, PillBottle } from "lucide-react";
 import Link from "next/link";

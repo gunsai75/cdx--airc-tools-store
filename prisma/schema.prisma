@@ -25,7 +25,7 @@ model User {
   role         UserRole        @default(USER)
   // Optional for WebAuthn support
   Authenticator Authenticator[]
-  token        Int?            @default(150)
+  token        Int            @default(150)
  
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
@@ -85,3 +85,29 @@ model Authenticator {
  
   @@id([userId, credentialID])
 }
+
+
+model Tool {
+  id        String   @id @default(uuid())
+  
+ 
+}
+
+// model Transaction {
+//   id        String   @id @default(uuid())
+//   paymentId String? // 
+//   amount    Int
+//   toolId    String
+//   userId    String
+// }
+
+
+model Transaction {
+  id        String   @id @default(uuid())
+  value     String
+  userId    String
+  description String
+}
+
+
+
