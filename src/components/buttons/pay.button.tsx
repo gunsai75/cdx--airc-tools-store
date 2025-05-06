@@ -42,7 +42,7 @@ declare global {
   }
 }
 
-export default function PaymentButton() {
+export default function PaymentButton({label}: {label?: string}) {
   const [amount, setAmount] = useState("500");
   const [loading, setLoading] = useState(false);
 
@@ -110,7 +110,7 @@ toast.error(`Payment verification failed: ${verification.error}`);
       <Script src="https://checkout.razorpay.com/v1/checkout.js" />
       <form onSubmit={handlePayment}>
         <RainbowButton type="submit" className="text-xs rounded-full">
-          {loading ? "Processing..." : "Pay Now"}
+          {loading ? "Processing..." :  `${label ? label : 'Pay Now'}` }
         </RainbowButton>
       </form>
     </>
